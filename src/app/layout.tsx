@@ -45,6 +45,9 @@ export default async function RootLayout({
       )}
     >
       <head>
+        <link rel="icon" href="/images/avatar-v2.jpg?v=3" type="image/jpeg" />
+        <link rel="shortcut icon" href="/images/avatar-v2.jpg?v=3" type="image/jpeg" />
+        <link rel="apple-touch-icon" href="/images/avatar-v2.jpg?v=3" />
         <script
           id="theme-init"
           dangerouslySetInnerHTML={{

@@ -2,20 +2,21 @@ import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
-  avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  firstName: "Sagar",
+  lastName: "Gaud",
+  name: "Sagar Gaud",
+  role: "3D Artist",
+  avatar: "/images/avatar-v2.jpg",
+  email: "sagargaud88@gmail.com",
+  location: "Asia/Kolkata", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  locationLabel: "Mumbai, India",
+  languages: ["English", "Hindi"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter: Newsletter = {
-  display: true,
+  display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  description: <>Insights from my 3D production workflow and project breakdowns.</>,
 };
 
 const social: Social = [
@@ -23,33 +24,39 @@ const social: Social = [
   // Import new icons in /once-ui/icons.ts
   // Set essentials: true for links you want to show on the about page
   {
-    name: "GitHub",
-    icon: "github",
-    link: "https://github.com/once-ui-system",
+    name: "Email",
+    icon: "email",
+    link: `mailto:${person.email}`,
+    essential: true,
+  },
+  {
+    name: "Phone",
+    icon: "openLink",
+    link: "tel:+917977059140",
     essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/in/sagar-gaud-244ab0b5/",
     essential: true,
   },
   {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    name: "GitHub",
+    icon: "github",
+    link: "https://github.com/BoredYama",
     essential: true,
   },
   {
-    name: "Email",
-    icon: "email",
-    link: `mailto:${person.email}`,
+    name: "ArtStation",
+    icon: "openLink",
+    link: "https://www.artstation.com/bored_yama",
+    essential: true,
+  },
+  {
+    name: "YouTube",
+    icon: "openLink",
+    link: "https://youtu.be/PKCgRCNnps0",
     essential: true,
   },
 ];
@@ -58,26 +65,28 @@ const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name}'s Portfolio`,
+  title: `${person.name} | Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>3D assets for animation, VFX, and eCommerce</>,
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
+        <strong className="ml-4">Recent work</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
-          Featured work
+          Quality analysis pipeline
         </Text>
       </Row>
     ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    href: "/work/quality-analysis-workflow-at-creators3d-hexa3d",
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
-</>
+      I am a Mumbai-based 3D Artist with hands-on experience in texturing, UV unwrapping, and
+      quality analysis. I work across animation and product visualization pipelines for
+      client-facing deliveries.
+    </>
   ),
 };
 
@@ -85,7 +94,7 @@ const about: About = {
   path: "/about",
   label: "About",
   title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  description: `Meet ${person.name}, ${person.role} from ${person.locationLabel || person.location}`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -94,17 +103,17 @@ const about: About = {
     display: true,
   },
   calendar: {
-    display: true,
-    link: "https://cal.com",
+    display: false,
+    link: "",
   },
   intro: {
     display: true,
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        I am an experienced 3D Artist with a strong background in animation and VFX. My work
+        focuses on production-ready 3D texturing, UV workflows, and quality-first execution across
+        client-focused pipelines.
       </>
     ),
   },
@@ -113,41 +122,83 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "SuperDNA 3D Lab",
+        timeframe: "Feb 2021 - Feb 2022",
+        role: "3D Artist (Full-time)",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Analyzed reference images and concept requirements for eCommerce-focused 3D assets.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Performed UV unwrapping and built realistic textures based on client references.
           </>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Fat Hamster Studio",
+        timeframe: "Feb 2022 - Aug 2022",
+        role: "Executive Animation",
+        achievements: [
+          <>Analyzed and interpreted concept art for production assets.</>,
+          <>Handled UV unwrapping and created textures closely aligned with approved concepts.</>,
+        ],
+        images: [],
+      },
+      {
+        company: "SuperDNA 3D Lab",
+        timeframe: "Aug 2022 - Aug 2023",
+        role: "Freelance 3D Artist",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Returned as a freelance artist to support eCommerce asset production with the same
+            quality standards.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Delivered UV-unwrapped and realistically textured assets aligned with product references.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Creators3D / Hexa3D",
+        timeframe: "Aug 2023 - Apr 2024",
+        role: "Quality Analyst",
+        achievements: [
+          <>
+            Reviewed 3D models against client-provided reference images to enforce quality
+            guidelines.
+          </>,
+          <>Wrote actionable feedback for artists to improve consistency and final output quality.</>,
+        ],
+        images: [],
+      },
+      {
+        company: "Various Clients",
+        timeframe: "May 2024 - Oct 2025",
+        role: "Freelance 3D Artist",
+        achievements: [
+          <>
+            Delivered 3D assets for different client briefs, including product-focused and
+            animation-ready outputs.
+          </>,
+          <>
+            Managed reference analysis, UV preparation, and texture creation from start to final
+            delivery.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Assemble.gg",
+        timeframe: "Oct 2025 - Present",
+        role: "Quality Analyst",
+        achievements: [
+          <>
+            Reviewed YouTube videos to identify visual and audio issues before publication.
+          </>,
+          <>
+            Provided corrected transcripts and wrote detailed feedback for artists in Google Sheets.
           </>,
         ],
         images: [],
@@ -156,77 +207,68 @@ const about: About = {
   },
   studies: {
     display: true, // set to false to hide this section
-    title: "Studies",
+    title: "Education",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Survodaya School",
+        description: <>SSC, Mumbai</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Keerti Institute of Thane",
+        description: <>Diploma in Animation and VFX, Thane</>,
       },
     ],
   },
   technical: {
     display: true, // set to false to hide this section
-    title: "Technical skills",
+    title: "Technical Skills",
     skills: [
       {
-        title: "Figma",
+        title: "3D Texturing and UV Unwrapping",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>Hands-on texturing and UV workflows for animation and product visualization assets.</>
         ),
         tags: [
           {
-            name: "Figma",
-            icon: "figma",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
+            name: "Autodesk Maya",
           },
           {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
+            name: "Substance Painter",
+          },
+          {
+            name: "Adobe Photoshop",
           },
         ],
+        images: [],
       },
       {
-        title: "Next.js",
-        description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
-        ),
+        title: "Detailing and Asset Finishing",
+        description: <>Detailing in ZBrush and mesh refinement for production-ready quality.</>,
         tags: [
           {
-            name: "JavaScript",
-            icon: "javascript",
+            name: "ZBrush",
           },
           {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
+            name: "Blender 3D",
           },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
+        images: [],
+      },
+      {
+        title: "Image and Video Editing",
+        description: <>Post-processing and media support for presentation and delivery.</>,
+        tags: [
           {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
+            name: "Premiere Pro",
+          },
+          {
+            name: "After Effects",
+          },
+          {
+            name: "DaVinci Resolve",
           },
         ],
+        images: [],
       },
     ],
   },
@@ -235,7 +277,7 @@ const about: About = {
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
+  title: "Notes and Insights",
   description: `Read what ${person.name} has been up to recently`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
@@ -244,8 +286,8 @@ const blog: Blog = {
 const work: Work = {
   path: "/work",
   label: "Work",
-  title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
+  title: `Work – ${person.name}`,
+  description: `3D production and quality work by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };
