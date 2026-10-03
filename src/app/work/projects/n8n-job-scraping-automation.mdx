@@ -2,7 +2,8 @@
 title: "LLM-Powered Job Scraping Automation"
 publishedAt: "2025-08-01"
 summary: "Automated n8n workflows that collect Reddit and Google Jobs postings, filter them with Gemini, and deliver curated leads to Discord."
-images: []
+images:
+  - "/images/projects/ai/n8n/workflow.png"
 team:
   - name: "Sagar Gaud"
     role: "Builder"
@@ -16,15 +17,27 @@ I developed automated job-scraping workflows in **n8n** that do the searching an
 
 ## How it works
 
-1. **Collect:** the workflows pull new postings from Reddit and Google Jobs.
-2. **Filter:** each posting is passed to an LLM (**Gemini**), which filters it against what I'm looking for.
-3. **Deliver:** curated leads are posted to **Discord**, so they arrive in one place.
+The Reddit workflow runs on a schedule in n8n:
+
+1. **Collect:** a schedule trigger fetches new posts from job subreddits over HTTP, and a code step filters and cleans them.
+2. **Skip duplicates:** each post is checked against **PostgreSQL**, so leads that were already sent are never repeated.
+3. **Ask the LLM:** posts are looped through an LLM chain using **Gemini**, which judges whether each one is a genuine, relevant opportunity and writes a one-line verdict. A parser turns its answer into structured data, and a short wait keeps the calls within rate limits.
+4. **Quality gate:** only posts that pass the AI quality filter continue.
+5. **Deliver:** passing leads are posted to **Discord** with the post details, the verdict and a link. The database is then updated so the post is marked as seen.
+
+## The result
+
+Leads arrive in a Discord channel, each with the subreddit, upvotes, an excerpt and the AI's one-line reason for passing it through.
+
+![Curated job leads posted by the bot in Discord](/images/projects/ai/n8n/discord-leads-1.png)
+
+![More leads, each with an AI-written verdict](/images/projects/ai/n8n/discord-leads-2.png)
 
 ## Stack
 
 - n8n for workflow orchestration
 - Gemini for LLM-based filtering
+- PostgreSQL to track posts already seen
 - Discord for delivery
 - Runs on my self-hosted Oracle Cloud infrastructure
 
-{/* TODO: add a screenshot of the n8n workflow canvas to `images` above */}

@@ -109,6 +109,18 @@ export interface Home extends BasePageConfig {
   };
   /** The sub text which appears below the headline */
   subline: React.ReactNode;
+  /** Background video behind the intro; plays once and holds on its last frame */
+  heroVideo: {
+    display: boolean;
+    /** Path inside the public directory */
+    src: string;
+    /** Smaller encode for viewports under 1024px */
+    srcMobile?: string;
+    /** First frame, shown while the video loads */
+    posterStart: string;
+    /** Last frame, shown when motion is reduced or autoplay is blocked */
+    posterEnd: string;
+  };
   /** Showreel video embedded below the intro */
   showreel: {
     display: boolean;
@@ -258,5 +270,17 @@ export interface Gallery extends BasePageConfig {
     alt: string;
     /** Image orientation (horizontal/vertical) */
     orientation: string;
+  }>;
+  /**
+   * Sets of renders of the same scene, shown together (all 16:9). With three or more
+   * images the first is shown large and the rest stacked beside it; two sit side by side.
+   */
+  series?: Array<{
+    /** Above the grid (default) or below it */
+    placement?: "top" | "bottom";
+    images: Array<{
+      src: string;
+      alt: string;
+    }>;
   }>;
 }

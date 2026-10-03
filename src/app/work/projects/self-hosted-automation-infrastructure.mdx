@@ -2,7 +2,8 @@
 title: "Self-Hosted Automation Infrastructure"
 publishedAt: "2025-07-01"
 summary: "Linux administration of an Oracle Cloud VM running Docker and systemd services that support multiple automation workflows."
-images: []
+images:
+  - "/images/projects/ai/infra/architecture.png"
 team:
   - name: "Sagar Gaud"
     role: "Builder"
@@ -13,6 +14,10 @@ team:
 ## Overview
 
 I manage self-hosted infrastructure on an **Oracle Cloud** virtual machine. It runs the services behind my automation workflows, including the n8n job-scraping automation.
+
+## Architecture
+
+The diagram above shows the setup. n8n and PostgreSQL run as Docker containers on the VM, and systemd keeps them running. n8n pulls from the job sources, calls Gemini for filtering, and posts the results to Discord.
 
 ## Responsibilities
 
@@ -27,4 +32,3 @@ I manage self-hosted infrastructure on an **Oracle Cloud** virtual machine. It r
 - Docker
 - systemd
 
-{/* TODO: add an architecture diagram or screenshots to `images` above */}

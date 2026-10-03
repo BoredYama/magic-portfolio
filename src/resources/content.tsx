@@ -68,7 +68,13 @@ const home: Home = {
   label: "Home",
   title: `${person.name} | Portfolio`,
   description: `Portfolio of ${person.name}, ${person.role} with a background in 3D production`,
-  headline: <>AI pipelines and automation, built on a 3D production background</>,
+  headline: (
+    <>
+      3D Artist.
+      <br />
+      AI Workflow Builder.
+    </>
+  ),
   featured: {
     display: true,
     title: (
@@ -89,6 +95,13 @@ const home: Home = {
       and quality analysis for clients including Disney and Amazon to every pipeline I build.
     </>
   ),
+  heroVideo: {
+    display: true,
+    src: "/video/ocean-hero.mp4",
+    srcMobile: "/video/ocean-hero-720.mp4",
+    posterStart: "/video/ocean-hero-start.jpg",
+    posterEnd: "/video/ocean-hero-end.jpg",
+  },
   showreel: {
     display: true,
     videoId: "PKCgRCNnps0",
@@ -280,15 +293,27 @@ const about: About = {
         tags: [
           {
             name: "ComfyUI",
+            icon: "workflow",
           },
           {
             name: "LTX Video",
+            icon: "video",
           },
           {
             name: "ACE-Step",
+            icon: "music",
           },
           {
             name: "n8n",
+            icon: "n8n",
+          },
+          {
+            name: "Claude Code",
+            icon: "claude",
+          },
+          {
+            name: "Codex",
+            icon: "openai",
           },
           {
             name: "Gemini",
@@ -296,6 +321,7 @@ const about: About = {
           },
           {
             name: "Local LLMs",
+            icon: "cpu",
           },
           {
             name: "Docker",
@@ -316,12 +342,15 @@ const about: About = {
         tags: [
           {
             name: "Autodesk Maya",
+            icon: "maya",
           },
           {
             name: "Substance Painter",
+            icon: "paintbrush",
           },
           {
             name: "Adobe Photoshop",
+            icon: "photoshop",
           },
         ],
         images: [],
@@ -332,6 +361,7 @@ const about: About = {
         tags: [
           {
             name: "ZBrush",
+            icon: "brush",
           },
           {
             name: "Blender 3D",
@@ -346,12 +376,15 @@ const about: About = {
         tags: [
           {
             name: "Premiere Pro",
+            icon: "premiere",
           },
           {
             name: "After Effects",
+            icon: "afterEffects",
           },
           {
             name: "DaVinci Resolve",
+            icon: "davinci",
           },
         ],
         images: [],
@@ -384,7 +417,50 @@ const gallery: Gallery = {
   title: `3D Renders – ${person.name}`,
   description: `Textured 3D assets by ${person.name}`,
   // Add renders to public/images/projects/3d and list them here
+  series: [
+    {
+      // Stylised house, three angles
+      images: [
+        {
+          src: "/images/projects/3d/stylised_house_full.jpg",
+          alt: "Stylised two-storey house with orange shingle roof and striped awning",
+        },
+        {
+          src: "/images/projects/3d/stylised_house_side.jpg",
+          alt: "Side view of the stylised house with wooden stairs and arched door",
+        },
+        {
+          src: "/images/projects/3d/stylised_house_top.jpg",
+          alt: "Close view of the stylised house roof, awning and copper pipes",
+        },
+      ],
+    },
+    {
+      // Haunted house interior, two views
+      placement: "bottom",
+      images: [
+        {
+          src: "/images/projects/3d/haunted_house.png",
+          alt: "Haunted house interior with weathered red wood panelling",
+        },
+        {
+          src: "/images/projects/3d/window_frame.png",
+          alt: "Haunted house window with red curtains",
+        },
+      ],
+    },
+  ],
   images: [
+    {
+      src: "/images/projects/3d/abyss.jpg",
+      alt: "Horned creature turnaround shown from four angles",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/projects/3d/desert_rocks.jpg",
+      alt: "Desert cliff and scattered sandstone rocks",
+      orientation: "horizontal",
+    },
     {
       src: "/images/projects/3d/it_taxi.png",
       alt: "Yellow taxi cab with a checkered stripe on a dark background",
@@ -396,18 +472,8 @@ const gallery: Gallery = {
       orientation: "horizontal",
     },
     {
-      src: "/images/projects/3d/haunted_house.png",
-      alt: "Haunted house interior with weathered red wood panelling",
-      orientation: "horizontal",
-    },
-    {
       src: "/images/projects/3d/recliner.png",
       alt: "Tan leather recliner with matching footstool",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/projects/3d/potion.png",
-      alt: "Stylised brass potion still standing on grass",
       orientation: "horizontal",
     },
     {
@@ -418,11 +484,6 @@ const gallery: Gallery = {
     {
       src: "/images/projects/3d/gaming.png",
       alt: "Black and red gaming chair",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/projects/3d/window_frame.png",
-      alt: "Haunted house window with red curtains",
       orientation: "horizontal",
     },
     {

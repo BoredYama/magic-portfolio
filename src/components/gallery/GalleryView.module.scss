@@ -1,0 +1,34 @@
+@use "../breakpoints.scss" as breakpoints;
+
+// A set of renders of one scene: the main view spans both rows so its edges
+// line up with the two stacked angles beside it.
+.series {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--static-space-8);
+  width: 100%;
+}
+
+.main {
+  grid-row: span 2;
+}
+
+// Two views of one scene, side by side at equal size
+.pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--static-space-8);
+  width: 100%;
+}
+
+@include breakpoints.s {
+  .series,
+  .pair {
+    grid-template-columns: 1fr;
+  }
+
+  .main {
+    grid-row: auto;
+    aspect-ratio: 16 / 9;
+  }
+}

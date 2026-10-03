@@ -37,6 +37,8 @@ Pages read from these objects and render sections conditionally, so adding/remov
 - `[slug]/page.tsx` routes use `generateStaticParams` over `getPosts`, then render the body via `CustomMDX` (`src/components/mdx.tsx`), which wraps `next-mdx-remote/rsc` with Once UI components (headings with anchor links, code blocks, media, tables, etc.). To make a new component available in MDX, add it to the `components` map in `mdx.tsx`.
 - Images referenced in frontmatter/MDX live under `public/images/` (3D renders in `public/images/projects/3d/`). A project with `images: []` renders without a carousel.
 - `src/app/blog/posts/` is currently empty and `/blog` is disabled; `getMDXFiles` returns `[]` for a missing folder, and the sitemap/RSS skip disabled routes.
+- `HeroVideo` (`src/components/HeroVideo.tsx`, configured by `home.heroVideo`) is the full-bleed ocean video behind the home intro, served from `public/video/`. It plays once and holds the last frame, measures its own position in JS to span the page (100vw would add a horizontal scrollbar), loads the 720p file under 1024px, and shows the end-frame still for reduced motion or blocked autoplay. The intro column sets `data-theme="dark"` so its text stays light over the video in both themes.
+- `gallery.series` groups renders of one scene (two side by side; three or more with the first large and the rest stacked), above the masonry grid or below it with `placement: "bottom"`; the layout is a CSS grid in `src/components/gallery/GalleryView.module.scss`, since Once UI breakpoint styles weren't applied to it.
 - `YouTubeEmbed` (`src/components/YouTubeEmbed.tsx`) is registered in the MDX component map and drives the home-page showreel (`home.showreel`).
 
 ### Routing guard and password protection

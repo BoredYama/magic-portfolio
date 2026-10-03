@@ -33,7 +33,18 @@ import {
   SiGooglegemini,
   SiOllama,
   SiLinux,
+  SiClaude,
+  SiOpenai,
+  SiN8N,
+  SiAutodeskmaya,
+  SiAdobephotoshop,
+  SiAdobepremierepro,
+  SiAdobeaftereffects,
+  SiDavinciresolve,
 } from "react-icons/si";
+
+// Generic icons for tools without a published logo
+import { LuWorkflow, LuClapperboard, LuMusic, LuCpu, LuPaintbrush, LuBrush } from "react-icons/lu";
 
 import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads, FaInstagram, FaXTwitter, FaFacebook, FaPinterest, FaWhatsapp, FaReddit, FaTelegram, FaArtstation, FaYoutube, FaPhone } from "react-icons/fa6";
 
@@ -79,6 +90,20 @@ export const iconLibrary: Record<string, IconType> = {
   gemini: SiGooglegemini,
   ollama: SiOllama,
   linux: SiLinux,
+  claude: SiClaude,
+  openai: SiOpenai,
+  n8n: SiN8N,
+  maya: SiAutodeskmaya,
+  photoshop: SiAdobephotoshop,
+  premiere: SiAdobepremierepro,
+  afterEffects: SiAdobeaftereffects,
+  davinci: SiDavinciresolve,
+  workflow: LuWorkflow,
+  video: LuClapperboard,
+  music: LuMusic,
+  cpu: LuCpu,
+  paintbrush: LuPaintbrush,
+  brush: LuBrush,
 };
 
 export type IconLibrary = typeof iconLibrary;

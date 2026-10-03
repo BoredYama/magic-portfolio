@@ -12,7 +12,7 @@ import {
   Line,
 } from "@once-ui-system/core";
 import { home, about, person, baseURL, routes } from "@/resources";
-import { Mailchimp, YouTubeEmbed } from "@/components";
+import { HeroVideo, Mailchimp, YouTubeEmbed } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
 
@@ -42,8 +42,28 @@ export default function Home() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <Column fillWidth horizontal="center" gap="m">
-        <Column maxWidth="s" horizontal="center" align="center">
+      <Column
+        fillWidth
+        horizontal="center"
+        gap="m"
+        paddingTop={home.heroVideo.display ? "80" : undefined}
+        paddingBottom={home.heroVideo.display ? "160" : undefined}
+      >
+        {home.heroVideo.display && (
+          <HeroVideo
+            src={home.heroVideo.src}
+            srcMobile={home.heroVideo.srcMobile}
+            posterStart={home.heroVideo.posterStart}
+            posterEnd={home.heroVideo.posterEnd}
+          />
+        )}
+        {/* Keep the intro light-on-dark over the video in both themes */}
+        <Column
+          maxWidth="s"
+          horizontal="center"
+          align="center"
+          data-theme={home.heroVideo.display ? "dark" : undefined}
+        >
           {home.featured.display && (
             <RevealFx
               fillWidth

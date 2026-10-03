@@ -9,3 +9,5 @@ export { ScrollToHash } from "@/components/ScrollToHash";
 export { ThemeToggle } from "@/components/ThemeToggle";
 export { CustomMDX } from "@/components/mdx";
 export { YouTubeEmbed } from "@/components/YouTubeEmbed";
+export { HeroVideo } from "@/components/HeroVideo";
+export { InlineVideo } from "@/components/InlineVideo";

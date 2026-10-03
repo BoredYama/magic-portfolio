@@ -2,7 +2,10 @@
 title: "Local AI Generation Pipeline"
 publishedAt: "2025-09-01"
 summary: "A self-built generative AI pipeline for video and music running on a custom Linux/NVIDIA workstation, using ComfyUI, LTX video and ACE-Step."
-images: []
+images:
+  - "/images/projects/ai/pipeline/lighthouse.jpg"
+  - "/images/projects/ai/pipeline/new-york.jpg"
+  - "/images/projects/ai/pipeline/rain.jpg"
 team:
   - name: "Sagar Gaud"
     role: "Builder"
@@ -20,6 +23,28 @@ I built and maintain a local AI generation pipeline on my own Linux workstation 
 - **LTX video** for AI video generation.
 - **ACE-Step** for AI music generation.
 
+## Sample outputs
+
+Text-to-video clips generated locally with LTX 2.5, including their audio. Unmute to hear it.
+
+<InlineVideo
+  src="/images/projects/ai/pipeline/lighthouse.mp4"
+  poster="/images/projects/ai/pipeline/lighthouse.jpg"
+  caption="A lighthouse keeper watching the waves at dusk"
+/>
+
+<InlineVideo
+  src="/images/projects/ai/pipeline/new-york.mp4"
+  poster="/images/projects/ai/pipeline/new-york.jpg"
+  caption="Aerial view over Manhattan at sunset"
+/>
+
+<InlineVideo
+  src="/images/projects/ai/pipeline/rain.mp4"
+  poster="/images/projects/ai/pipeline/rain.jpg"
+  caption="A forest road in the rain"
+/>
+
 ## Keeping it running
 
 - Debugged custom ComfyUI nodes when updates or dependencies broke workflows.
@@ -30,4 +55,3 @@ I built and maintain a local AI generation pipeline on my own Linux workstation 
 
 My background in 3D texturing and quality analysis means I look at generated output the same way I reviewed production assets: against a reference, frame by frame, with an eye for artifacts.
 
-{/* TODO: add screenshots of ComfyUI workflows or sample outputs to `images` above and inline here */}
