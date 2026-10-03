@@ -11,6 +11,7 @@ const person: Person = {
   location: "Asia/Kolkata", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   locationLabel: "Mumbai, India",
   languages: ["English", "Hindi"], // optional: Leave the array empty if you don't want to display languages
+  locale: "en", // BCP 47 language tag for the HTML lang attribute, e.g., 'en', 'ja', 'zh-TW'
 };
 
 const newsletter: Newsletter = {
