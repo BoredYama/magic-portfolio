@@ -1,6 +1,7 @@
 import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
 import React, { ReactNode } from "react";
 import { slugify as transliterate } from "transliteration";
+import { YouTubeEmbed } from "@/components/YouTubeEmbed";
 
 import {
   Heading,
@@ -202,6 +203,7 @@ const components = {
   Icon,
   Media,
   SmartLink,
+  YouTubeEmbed,
 };
 
 type CustomMDXProps = MDXRemoteProps & {

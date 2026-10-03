@@ -6,7 +6,13 @@
     "useIgnoreFile": false
   },
   "files": {
-    "ignoreUnknown": false
+    "ignoreUnknown": false,
+    "ignore": [
+      ".next",
+      ".kilo",
+      "node_modules",
+      "public"
+    ]
   },
   "formatter": {
     "enabled": true,
@@ -16,7 +22,9 @@
   },
   "linter": {
     "enabled": true,
-    "rules": { "recommended": true }
+    "rules": {
+      "recommended": true
+    }
   },
   "javascript": {
     "formatter": {

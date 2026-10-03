@@ -5,7 +5,7 @@ const person: Person = {
   firstName: "Sagar",
   lastName: "Gaud",
   name: "Sagar Gaud",
-  role: "3D Artist",
+  role: "AI Workflow & Automation Specialist",
   avatar: "/images/avatar-v2.jpg",
   email: "sagargaud88@gmail.com",
   location: "Asia/Kolkata", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
@@ -17,7 +17,7 @@ const person: Person = {
 const newsletter: Newsletter = {
   display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>Insights from my 3D production workflow and project breakdowns.</>,
+  description: <>Notes on local AI pipelines, automation and self-hosted infrastructure.</>,
 };
 
 const social: Social = [
@@ -32,7 +32,7 @@ const social: Social = [
   },
   {
     name: "Phone",
-    icon: "openLink",
+    icon: "phone",
     link: "tel:+917977059140",
     essential: true,
   },
@@ -50,13 +50,13 @@ const social: Social = [
   },
   {
     name: "ArtStation",
-    icon: "openLink",
+    icon: "artstation",
     link: "https://www.artstation.com/bored_yama",
     essential: true,
   },
   {
     name: "YouTube",
-    icon: "openLink",
+    icon: "youtube",
     link: "https://youtu.be/PKCgRCNnps0",
     essential: true,
   },
@@ -64,31 +64,36 @@ const social: Social = [
 
 const home: Home = {
   path: "/",
-  image: "/images/og/home.jpg",
+  image: `/api/og/generate?title=${encodeURIComponent(`${person.name} | Portfolio`)}`,
   label: "Home",
   title: `${person.name} | Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>3D assets for animation, VFX, and eCommerce</>,
+  description: `Portfolio of ${person.name}, ${person.role} with a background in 3D production`,
+  headline: <>AI pipelines and automation, built on a 3D production background</>,
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Recent work</strong>{" "}
+        <strong>Recent work</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
-          Quality analysis pipeline
+          Local AI generation pipeline
         </Text>
       </Row>
     ),
-    href: "/work/quality-analysis-workflow-at-creators3d-hexa3d",
+    href: "/work/local-ai-generation-pipeline",
   },
   subline: (
     <>
-      I am a Mumbai-based 3D Artist with hands-on experience in texturing, UV unwrapping, and
-      quality analysis. I work across animation and product visualization pipelines for
-      client-facing deliveries.
+      I am a Mumbai-based builder of AI workflows: local generation pipelines, LLM-powered
+      automations and the self-hosted infrastructure that runs them. I bring years of 3D texturing
+      and quality analysis for clients including Disney and Amazon to every pipeline I build.
     </>
   ),
+  showreel: {
+    display: true,
+    videoId: "PKCgRCNnps0",
+    title: `${person.name} – showreel`,
+  },
 };
 
 const about: About = {
@@ -107,14 +112,21 @@ const about: About = {
     display: false,
     link: "",
   },
+  resume: {
+    display: true,
+    link: "/SagarGaud-Resume.pdf",
+  },
   intro: {
     display: true,
     title: "Introduction",
     description: (
       <>
-        I am an experienced 3D Artist with a strong background in animation and VFX. My work
-        focuses on production-ready 3D texturing, UV workflows, and quality-first execution across
-        client-focused pipelines.
+        I build and run AI workflows: a local generation pipeline for video and music on my own
+        Linux/NVIDIA workstation, n8n automations that use LLMs to filter and deliver information,
+        and the self-hosted cloud infrastructure behind them. Before AI, I spent years as a 3D
+        artist and quality analyst in animation, VFX and eCommerce, working for clients including
+        Disney and Amazon. That production background shapes how I work with AI: reference-driven,
+        detail-oriented and focused on output that holds up to review.
       </>
     ),
   },
@@ -123,54 +135,39 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "SuperDNA 3D Lab",
-        timeframe: "Feb 2021 - Feb 2022",
-        role: "3D Artist (Full-time)",
+        company: "AI & Automation Projects",
+        timeframe: "2025 - Present",
+        role: "Independent / Self-Directed",
         achievements: [
           <>
-            Analyzed reference images and concept requirements for eCommerce-focused 3D assets.
+            Built and maintain a local AI generation pipeline (ComfyUI, LTX video, ACE-Step music)
+            on a custom Linux/NVIDIA workstation, including custom node debugging and Python
+            environment management.
           </>,
           <>
-            Performed UV unwrapping and built realistic textures based on client references.
+            Developed automated job-scraping workflows in n8n that filter Reddit and Google Jobs
+            postings via LLM integration (Gemini) and deliver curated leads to Discord.
+          </>,
+          <>
+            Manage self-hosted infrastructure on an Oracle Cloud VM (Linux administration, Docker,
+            systemd) supporting multiple automation workflows.
           </>,
         ],
         images: [],
       },
       {
-        company: "Fat Hamster Studio",
-        timeframe: "Feb 2022 - Aug 2022",
-        role: "Executive Animation",
-        achievements: [
-          <>Analyzed and interpreted concept art for production assets.</>,
-          <>Handled UV unwrapping and created textures closely aligned with approved concepts.</>,
-        ],
-        images: [],
-      },
-      {
-        company: "SuperDNA 3D Lab",
-        timeframe: "Aug 2022 - Aug 2023",
-        role: "Freelance 3D Artist",
-        achievements: [
-          <>
-            Returned as a freelance artist to support eCommerce asset production with the same
-            quality standards.
-          </>,
-          <>
-            Delivered UV-unwrapped and realistically textured assets aligned with product references.
-          </>,
-        ],
-        images: [],
-      },
-      {
-        company: "Creators3D / Hexa3D",
-        timeframe: "Aug 2023 - Apr 2024",
+        company: "Assemble / Clickable Network",
+        timeframe: "Jan 2025 - Present",
         role: "Quality Analyst",
         achievements: [
           <>
-            Reviewed 3D models against client-provided reference images to enforce quality
-            guidelines.
+            Review videos created by video editors to find glitches and artifacts in the audio or
+            video before publication.
           </>,
-          <>Wrote actionable feedback for artists to improve consistency and final output quality.</>,
+          <>
+            Provide subtitle corrections that sync with the audio, and write detailed feedback in
+            Google Sheets with a clean record for each video.
+          </>,
         ],
         images: [],
       },
@@ -191,16 +188,64 @@ const about: About = {
         images: [],
       },
       {
-        company: "Assemble.gg",
-        timeframe: "Oct 2025 - Present",
+        company: "Creators3D / Hexa3D",
+        timeframe: "Aug 2023 - Apr 2024",
         role: "Quality Analyst",
         achievements: [
           <>
-            Reviewed YouTube videos to identify visual and audio issues before publication.
+            Reviewed 3D models against client-provided reference images to enforce quality
+            guidelines.
+          </>,
+          <>Wrote actionable feedback for artists to improve consistency and final output quality.</>,
+        ],
+        images: [],
+      },
+      {
+        company: "SuperDNA 3D Lab",
+        timeframe: "Aug 2022 - Aug 2023",
+        role: "Freelance 3D Artist",
+        achievements: [
+          <>
+            Returned as a freelance artist to support eCommerce asset production with the same
+            quality standards.
           </>,
           <>
-            Provided corrected transcripts and wrote detailed feedback for artists in Google Sheets.
+            Delivered UV-unwrapped and realistically textured assets aligned with product references.
           </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Fat Hamster Studio",
+        timeframe: "Feb 2022 - Aug 2022",
+        role: "Executive Animation",
+        achievements: [
+          <>Analyzed and interpreted concept art for production assets.</>,
+          <>Handled UV unwrapping and created textures closely aligned with approved concepts.</>,
+        ],
+        images: [],
+      },
+      {
+        company: "SuperDNA 3D Lab",
+        timeframe: "Feb 2021 - Feb 2022",
+        role: "3D Artist (Full-time)",
+        achievements: [
+          <>
+            Analyzed reference images and concept requirements for eCommerce-focused 3D assets.
+          </>,
+          <>
+            Performed UV unwrapping and built realistic textures based on client references.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Disney Animated Flipbooks & Various Clients",
+        timeframe: "Jan 2017 - Jan 2019",
+        role: "Freelance",
+        achievements: [
+          <>Created digital flipbooks for various clients, including Disney.</>,
+          <>Analyzed the stories, adjusted audio and synced the animation with speech.</>,
         ],
         images: [],
       },
@@ -224,6 +269,45 @@ const about: About = {
     display: true, // set to false to hide this section
     title: "Technical Skills",
     skills: [
+      {
+        title: "AI & Automation",
+        description: (
+          <>
+            Local generative AI pipelines, LLM-powered automations and the self-hosted
+            infrastructure that runs them.
+          </>
+        ),
+        tags: [
+          {
+            name: "ComfyUI",
+          },
+          {
+            name: "LTX Video",
+          },
+          {
+            name: "ACE-Step",
+          },
+          {
+            name: "n8n",
+          },
+          {
+            name: "Gemini",
+            icon: "gemini",
+          },
+          {
+            name: "Local LLMs",
+          },
+          {
+            name: "Docker",
+            icon: "docker",
+          },
+          {
+            name: "Linux",
+            icon: "linux",
+          },
+        ],
+        images: [],
+      },
       {
         title: "3D Texturing and UV Unwrapping",
         description: (
@@ -251,6 +335,7 @@ const about: About = {
           },
           {
             name: "Blender 3D",
+            icon: "blender",
           },
         ],
         images: [],
@@ -288,58 +373,72 @@ const work: Work = {
   path: "/work",
   label: "Work",
   title: `Work – ${person.name}`,
-  description: `3D production and quality work by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
+  description: `AI automation and 3D production work by ${person.name}`,
+  // Create new project pages by adding a new .mdx file to app/work/projects
   // All projects will be listed on the /home and /work routes
 };
 
 const gallery: Gallery = {
   path: "/gallery",
-  label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
-  description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
+  label: "Renders",
+  title: `3D Renders – ${person.name}`,
+  description: `Textured 3D assets by ${person.name}`,
+  // Add renders to public/images/projects/3d and list them here
   images: [
     {
-      src: "/images/gallery/horizontal-1.jpg",
-      alt: "image",
+      src: "/images/projects/3d/it_taxi.png",
+      alt: "Yellow taxi cab with a checkered stripe on a dark background",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/vertical-4.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-3.jpg",
-      alt: "image",
+      src: "/images/projects/3d/sofa.png",
+      alt: "Purple velvet three-seat sofa",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/vertical-2.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-2.jpg",
-      alt: "image",
+      src: "/images/projects/3d/haunted_house.png",
+      alt: "Haunted house interior with weathered red wood panelling",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/horizontal-4.jpg",
-      alt: "image",
+      src: "/images/projects/3d/recliner.png",
+      alt: "Tan leather recliner with matching footstool",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/vertical-3.jpg",
-      alt: "image",
-      orientation: "vertical",
+      src: "/images/projects/3d/potion.png",
+      alt: "Stylised brass potion still standing on grass",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/projects/3d/rustic.png",
+      alt: "Rustic distressed wooden side table with a drawer",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/projects/3d/gaming.png",
+      alt: "Black and red gaming chair",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/projects/3d/window_frame.png",
+      alt: "Haunted house window with red curtains",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/projects/3d/bean.png",
+      alt: "Black leather bean bag with pouf and cushion",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/projects/3d/chair.png",
+      alt: "Pair of green chairs with cane seats and backs",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/projects/3d/office.png",
+      alt: "Black ergonomic office chair",
+      orientation: "horizontal",
     },
   ],
 };

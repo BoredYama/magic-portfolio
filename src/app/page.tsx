@@ -12,7 +12,7 @@ import {
   Line,
 } from "@once-ui-system/core";
 import { home, about, person, baseURL, routes } from "@/resources";
-import { Mailchimp } from "@/components";
+import { Mailchimp, YouTubeEmbed } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
 
@@ -100,6 +100,11 @@ export default function Home() {
           </RevealFx>
         </Column>
       </Column>
+      {home.showreel.display && (
+        <RevealFx translateY="16" delay={0.6} paddingX="l">
+          <YouTubeEmbed videoId={home.showreel.videoId} title={home.showreel.title} />
+        </RevealFx>
+      )}
       <RevealFx translateY="16" delay={0.6}>
         <Projects range={[1, 1]} />
       </RevealFx>

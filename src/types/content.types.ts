@@ -109,6 +109,13 @@ export interface Home extends BasePageConfig {
   };
   /** The sub text which appears below the headline */
   subline: React.ReactNode;
+  /** Showreel video embedded below the intro */
+  showreel: {
+    display: boolean;
+    /** YouTube video ID, e.g. the `PKCgRCNnps0` in youtu.be/PKCgRCNnps0 */
+    videoId: string;
+    title: string;
+  };
 }
 
 /**
@@ -133,6 +140,13 @@ export interface About extends BasePageConfig {
     /** Whether to display the calendar */
     display: boolean;
     /** Link to the calendar */
+    link: string;
+  };
+  /** Résumé download configuration */
+  resume: {
+    /** Whether to display the download button */
+    display: boolean;
+    /** Path to the PDF inside the public directory */
     link: string;
   };
   /** Introduction section */

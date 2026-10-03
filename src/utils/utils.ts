@@ -24,8 +24,9 @@ type Metadata = {
 import { notFound } from "next/navigation";
 
 function getMDXFiles(dir: string) {
+  // An empty posts folder isn't tracked by git, so a missing dir just means no posts
   if (!fs.existsSync(dir)) {
-    notFound();
+    return [];
   }
 
   return fs.readdirSync(dir).filter((file) => path.extname(file) === ".mdx");

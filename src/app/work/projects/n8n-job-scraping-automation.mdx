@@ -1,0 +1,30 @@
+---
+title: "LLM-Powered Job Scraping Automation"
+publishedAt: "2025-08-01"
+summary: "Automated n8n workflows that collect Reddit and Google Jobs postings, filter them with Gemini, and deliver curated leads to Discord."
+images: []
+team:
+  - name: "Sagar Gaud"
+    role: "Builder"
+    avatar: "/images/avatar-v2.jpg"
+    linkedIn: "https://www.linkedin.com/in/sagar-gaud-244ab0b5/"
+---
+
+## Overview
+
+I developed automated job-scraping workflows in **n8n** that do the searching and first-pass filtering for me, and deliver only the relevant leads.
+
+## How it works
+
+1. **Collect:** the workflows pull new postings from Reddit and Google Jobs.
+2. **Filter:** each posting is passed to an LLM (**Gemini**), which filters it against what I'm looking for.
+3. **Deliver:** curated leads are posted to **Discord**, so they arrive in one place.
+
+## Stack
+
+- n8n for workflow orchestration
+- Gemini for LLM-based filtering
+- Discord for delivery
+- Runs on my self-hosted Oracle Cloud infrastructure
+
+{/* TODO: add a screenshot of the n8n workflow canvas to `images` above */}

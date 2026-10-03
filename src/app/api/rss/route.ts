@@ -1,9 +1,18 @@
 import { getPosts } from "@/utils/utils";
-import { baseURL, blog, person } from "@/resources";
+import { baseURL, blog, person, routes } from "@/resources";
 import { NextResponse } from "next/server";
 
+function escapeXml(text: string) {
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
+}
+
 export async function GET() {
-  const posts = getPosts(["src", "app", "blog", "posts"]);
+  const posts = routes["/blog"] ? getPosts(["src", "app", "blog", "posts"]) : [];
 
   // Sort posts by date (newest first)
   const sortedPosts = posts.sort((a, b) => {
@@ -31,7 +40,7 @@ export async function GET() {
       .map(
         (post) => `
     <item>
-      <title>${post.metadata.title}</title>
+      <title>${escapeXml(post.metadata.title)}</title>
       <link>${baseURL}/blog/${post.slug}</link>
       <guid>${baseURL}/blog/${post.slug}</guid>
       <pubDate>${new Date(post.metadata.publishedAt).toUTCString()}</pubDate>

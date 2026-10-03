@@ -194,6 +194,18 @@ export default function About() {
                 )}
               </Row>
             )}
+            {about.resume.display && (
+              <Row className={styles.blockAlign} paddingTop="12" fitWidth>
+                <Button
+                  href={about.resume.link}
+                  prefixIcon="download"
+                  label="Download CV"
+                  size="m"
+                  variant="primary"
+                  data-border="rounded"
+                />
+              </Row>
+            )}
           </Column>
 
           {about.intro.display && (
